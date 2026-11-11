@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2700" viewBox="0 0 1600 2700">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7f9fc"/><stop offset="1" stop-color="#edf2f8"/></linearGradient>
+ <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#152b49"/><stop offset="1" stop-color="#24476b"/></linearGradient>
+ <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dff5f1"/><stop offset="1" stop-color="#c9ebe5"/></linearGradient>
+ <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eee9ff"/><stop offset="1" stop-color="#ded6fb"/></linearGradient>
+ <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#19324d" flood-opacity=".12"/></filter>
+ <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0 0 L10 6 L0 12Z" fill="#58718c"/></marker>
+ <marker id="arrowTeal" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0 0 L10 6 L0 12Z" fill="#168b83"/></marker>
+ <style>
+  .h1{font:700 42px Inter,Arial,sans-serif;fill:#142b45}.sub{font:400 19px Inter,Arial,sans-serif;fill:#53677d}.section{font:700 22px Inter,Arial,sans-serif;fill:#19334f}.title{font:700 20px Inter,Arial,sans-serif;fill:#19334f}.body{font:400 16px Inter,Arial,sans-serif;fill:#3f5369}.small{font:400 14px Inter,Arial,sans-serif;fill:#53677d}.tiny{font:600 12px Inter,Arial,sans-serif;letter-spacing:1px;fill:#60758a}.white{fill:#fff}.line{stroke:#58718c;stroke-width:3;fill:none;marker-end:url(#arrow)}.dash{stroke:#168b83;stroke-width:2.5;stroke-dasharray:9 8;fill:none;marker-end:url(#arrowTeal)}
+ </style>
+</defs>
+<rect width="1600" height="2700" fill="url(#bg)"/>
+<!-- Header -->
+<text x="800" y="76" text-anchor="middle" class="h1">DH-RANL2SQL</text>
+<text x="800" y="112" text-anchor="middle" class="sub">Dynamic Hybrid Retrieval-Augmented NL2SQL</text>
+<text x="800" y="145" text-anchor="middle" class="small">A planner-led, orchestrated pipeline for trustworthy analytics over structured data and narrative text</text>
+
+<!-- Example question funnel -->
+<rect x="110" y="180" width="1380" height="245" rx="24" fill="#ffffff" stroke="#d6e0ea" filter="url(#shadow)"/>
+<text x="150" y="220" class="tiny">EXAMPLE USER QUESTION PATTERNS</text>
+<g>
+ <rect x="150" y="245" width="395" height="62" rx="12" fill="#edf3fa" stroke="#cfdae7"/><text x="172" y="270" class="title" font-size="17">Structured analytics</text><text x="172" y="292" class="small">“Average claim amount by sponsor last quarter?”</text>
+ <rect x="605" y="245" width="395" height="62" rx="12" fill="#e5f4f1" stroke="#c5e3dc"/><text x="627" y="270" class="title" font-size="17">Exact / lexical text</text><text x="627" y="292" class="small">“How many records mention prior authorization?”</text>
+ <rect x="1060" y="245" width="395" height="62" rx="12" fill="#f0edfc" stroke="#d9d2f2"/><text x="1082" y="270" class="title" font-size="17">Semantic / hybrid</text><text x="1082" y="292" class="small">“Average cost where narratives describe access barriers?”</text>
+ <path d="M347 307 V345 H800 M802 307 V345 M1257 307 V345 H800 V375" class="line"/>
+ <rect x="455" y="365" width="690" height="48" rx="24" fill="#dce8f4" stroke="#aebfd1"/><text x="800" y="395" text-anchor="middle" class="title">One shared execution pipeline</text>
+</g>
+<path d="M800 425 V470" class="line"/>
+
+<!-- Planner -->
+<rect x="260" y="480" width="1080" height="175" rx="22" fill="url(#violet)" stroke="#bdb2e9" filter="url(#shadow)"/>
+<text x="305" y="520" class="tiny">REASONING / PLAN CREATION</text>
+<text x="305" y="557" class="title" font-size="24">Query Planner Agent</text>
+<text x="305" y="588" class="body">Gemini + Google ADK + Pydantic v2</text>
+<text x="305" y="619" class="small">Interprets intent • decomposes measures, dimensions, filters, joins and semantic conditions</text>
+<rect x="1030" y="520" width="265" height="98" rx="14" fill="#fff" stroke="#c8bfe9"/>
+<text x="1050" y="547" class="tiny">OUTPUT</text><text x="1050" y="575" class="title">Typed ExecutionPlan</text><text x="1050" y="599" class="small">tools • dependencies • budgets</text>
+<path d="M800 655 V700" class="line"/>
+
+<!-- Orchestrator -->
+<rect x="160" y="710" width="1280" height="220" rx="24" fill="url(#navy)" filter="url(#shadow)"/>
+<text x="205" y="752" class="tiny" fill="#b7d5e8">CONTROL PLANE</text>
+<text x="205" y="795" class="white" font-family="Inter,Arial" font-size="30" font-weight="700">Orchestrator Agent</text>
+<text x="205" y="830" class="white" font-family="Inter,Arial" font-size="17">Consumes the plan and coordinates specialist tools — not a swarm of LLM agents.</text>
+<g font-family="Inter,Arial" font-size="15" fill="#e7f0f7">
+ <rect x="205" y="855" width="205" height="48" rx="10" fill="#315777"/><text x="307" y="884" text-anchor="middle" fill="#fff">State &amp; dependencies</text>
+ <rect x="430" y="855" width="205" height="48" rx="10" fill="#315777"/><text x="532" y="884" text-anchor="middle" fill="#fff">Parallel dispatch</text>
+ <rect x="655" y="855" width="205" height="48" rx="10" fill="#315777"/><text x="757" y="884" text-anchor="middle" fill="#fff">Retries &amp; timeouts</text>
+ <rect x="880" y="855" width="205" height="48" rx="10" fill="#315777"/><text x="982" y="884" text-anchor="middle" fill="#fff">Cost / token budgets</text>
+ <rect x="1105" y="855" width="285" height="48" rx="10" fill="#315777"/><text x="1247" y="884" text-anchor="middle" fill="#fff">Stopping &amp; escalation rules</text>
+</g>
+<path d="M800 930 V975" class="line"/>
+
+<!-- Metadata -->
+<rect x="250" y="985" width="1100" height="125" rx="18" fill="#fff" stroke="#cbd8e4" filter="url(#shadow)"/>
+<text x="290" y="1025" class="tiny">CONTEXT TOOLING</text><text x="290" y="1062" class="title">Metadata &amp; Context Tools</text>
+<text x="650" y="1028" class="body">INFORMATION_SCHEMA + governed metadata registry</text><text x="650" y="1060" class="small">Approved tables / columns • glossary &amp; metrics • table grain • join cardinality • permissions</text>
+<text x="800" y="1090" text-anchor="middle" class="small">Returns scoped SchemaContext to the orchestrator and downstream tools</text>
+<path d="M800 1110 V1150" class="line"/>
+
+<!-- Retrieval lanes -->
+<text x="800" y="1185" text-anchor="middle" class="section">Plan-selected specialist retrieval tools</text>
+<text x="800" y="1212" text-anchor="middle" class="small">Only the capabilities required by the question are dispatched; eligible paths can run in parallel</text>
+<path d="M800 1220 V1240 H330 V1260 M800 1240 V1260 M800 1240 H1270 V1260" class="line"/>
+<g filter="url(#shadow)">
+ <rect x="125" y="1265" width="410" height="155" rx="18" fill="#e4f3f0" stroke="#b8ddd5"/>
+ <rect x="595" y="1265" width="410" height="155" rx="18" fill="#eaf0f8" stroke="#c8d6e5"/>
+ <rect x="1065" y="1265" width="410" height="155" rx="18" fill="#f0edfc" stroke="#d8d0f2"/>
+</g>
+<text x="160" y="1308" class="title">Exact / rule search</text><text x="160" y="1340" class="body">IDs, codes, known values</text><text x="160" y="1372" class="small">Deterministic filters and governed rules</text>
+<text x="630" y="1308" class="title">Lexical search</text><text x="630" y="1340" class="body">BigQuery SEARCH</text><text x="630" y="1372" class="small">Token / phrase-oriented retrieval</text>
+<text x="1100" y="1308" class="title">Semantic search</text><text x="1100" y="1340" class="body">Vertex AI embeddings + VECTOR_SEARCH</text><text x="1100" y="1372" class="small">Meaning-based candidate retrieval</text>
+<path d="M330 1420 V1455 H800 M800 1420 V1455 M1270 1420 V1455 H800 V1480" class="line"/>
+<rect x="390" y="1485" width="820" height="105" rx="18" fill="url(#teal)" stroke="#a8d8ce" filter="url(#shadow)"/>
+<text x="430" y="1525" class="title">Hybrid fusion &amp; evidence assembly</text><text x="430" y="1558" class="body">RRF ranking • deduplication • source-row / paragraph lineage • provenance</text>
+<path d="M800 1590 V1630" class="line"/>
+
+<!-- semantic predicate -->
+<rect x="250" y="1640" width="1100" height="145" rx="18" fill="#fff" stroke="#cbd8e4" filter="url(#shadow)"/>
+<text x="290" y="1682" class="tiny">SEMANTIC INTERPRETATION</text><text x="290" y="1720" class="title">Evidence evaluation &amp; predicate definition</text>
+<text x="290" y="1752" class="body">Translate “describes access barriers” into an explicit, testable semantic predicate.</text>
+<text x="290" y="1775" class="small">Track predicate type, evidence, classifier quality and population coverage separately.</text>
+<path d="M800 1785 V1825" class="line"/>
+
+<!-- Gate -->
+<path d="M800 1828 L1040 1945 L800 2062 L560 1945 Z" fill="#fff4df" stroke="#e7b85e" stroke-width="3" filter="url(#shadow)"/>
+<text x="800" y="1917" text-anchor="middle" class="tiny">COMPLETENESS / QUALITY GATE</text>
+<text x="800" y="1950" text-anchor="middle" class="title">Full eligible population</text>
+<text x="800" y="1978" text-anchor="middle" class="title">evaluated + quality accepted?</text>
+<text x="800" y="2020" text-anchor="middle" class="small">Candidate top-K ≠ complete population</text>
+<!-- pass path -->
+<path d="M800 2062 V2110" class="line"/><text x="825" y="2092" class="tiny" fill="#168b83">YES</text>
+<rect x="260" y="2115" width="1080" height="150" rx="18" fill="#e8f1fa" stroke="#bfd0e1" filter="url(#shadow)"/>
+<text x="300" y="2155" class="tiny">QUERY CONSTRUCTION &amp; EXECUTION</text><text x="300" y="2192" class="title">SQL generation → SQLGlot AST validation → BigQuery dry run → execute</text>
+<text x="300" y="2225" class="body">SELECT-only • table / column allowlists • join &amp; grain checks • parameterization</text><text x="300" y="2250" class="small">Read-only IAM • bytes / time / result limits • bounded SQL repair and re-validation</text>
+<path d="M800 2265 V2305" class="line"/>
+
+<!-- result verification -->
+<rect x="340" y="2315" width="920" height="115" rx="18" fill="#e4f3f0" stroke="#b8ddd5" filter="url(#shadow)"/>
+<text x="380" y="2358" class="title">Result verification &amp; answer synthesis</text><text x="380" y="2392" class="body">Check result shape, anomalies, arithmetic and evidence alignment; explain with SQL, provenance and caveats.</text>
+<path d="M800 2430 V2470" class="line"/>
+<rect x="410" y="2480" width="780" height="90" rx="20" fill="url(#navy)" filter="url(#shadow)"/>
+<text x="800" y="2518" text-anchor="middle" class="white" font-family="Inter,Arial" font-size="23" font-weight="700">Trusted final answer</text><text x="800" y="2547" text-anchor="middle" class="white" font-family="Inter,Arial" font-size="15">Metric + explanation + SQL + evidence + limitations</text>
+
+<!-- failure path notes -->
+<path d="M560 1945 H115 V1750 H245" class="dash"/>
+<rect x="45" y="1635" width="185" height="220" rx="16" fill="#fff" stroke="#e3c68c"/>
+<text x="65" y="1675" class="title" font-size="16">NO / NOT YET</text><text x="65" y="1710" class="small">Expand evaluation</text><text x="65" y="1738" class="small">Refresh index</text><text x="65" y="1766" class="small">Clarify intent</text><text x="65" y="1794" class="small">or abstain</text>
+<text x="65" y="1827" class="tiny">NEVER claim exact</text><text x="65" y="1844" class="tiny">totals from top-K</text>
+<!-- loops / bounded -->
+<path d="M1340 2185 H1500 V1515 H1215" class="dash"/>
+<text x="1480" y="1840" text-anchor="end" class="tiny" transform="rotate(-90 1480 1840)">BOUNDED RE-PLAN / RETRY</text>
+
+<!-- Offline indexing plane -->
+<rect x="110" y="2595" width="1380" height="80" rx="16" fill="#fff" stroke="#cbd8e4"/>
+<text x="145" y="2628" class="tiny">OFFLINE KNOWLEDGE &amp; INDEXING PLANE</text>
+<text x="145" y="2655" class="small">BigQuery source data + metadata → scheduled / Cloud Run Jobs → text preparation + Vertex embeddings → lexical &amp; vector indexes → freshness checks / reconciliation</text>
+<path d="M1290 2595 V2575" class="dash"/>
+</svg>
